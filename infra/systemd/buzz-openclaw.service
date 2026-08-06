@@ -1,0 +1,24 @@
+[Unit]
+Description=Buzz bridge for the existing OpenClaw agent
+After=docker.service network-online.target
+Requires=docker.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/buzz/openclaw.env
+Environment=BUZZ_ACP_AGENT_COMMAND=/opt/buzz/desktop-v0.5.3/bin/openclaw-acp-existing
+Environment=BUZZ_ACP_AGENT_ARGS=
+Environment=BUZZ_ACP_AGENTS=1
+Environment=BUZZ_ACP_HEARTBEAT_INTERVAL=0
+Environment=BUZZ_ACP_RESPOND_TO=owner-only
+Environment=BUZZ_ACP_ALLOWED_RESPOND_TO=owner-only
+Environment=BUZZ_ACP_PERMISSION_MODE=dont-ask
+ExecStart=/opt/buzz/desktop-v0.5.3/bin/buzz-acp
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

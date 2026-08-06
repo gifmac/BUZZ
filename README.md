@@ -15,8 +15,8 @@ Linux filesystem rather than under `/mnt/c`.
 
 The relay and all dependency ports remain loopback-only. The public relay at
 `wss://buzz.proeduconnect.com` reuses an approved pre-existing Windows
-Cloudflare Tunnel. Both VPS integrations remain behind a separate user approval
-gate.
+Cloudflare Tunnel. The approved Hermes-VPS outbound bridge is active. The
+OpenClaw-VPS integration remains behind its separate user approval gate.
 
 ## Common commands
 
