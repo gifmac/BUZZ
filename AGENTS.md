@@ -1,5 +1,9 @@
 # BUZZ local pilot operator guide
 
+> **Decommissioned 2026-10-29.** The pilot is closed, every installation was
+> removed, and this repository is archived. See
+> `docs/operations/decommission.md`. Do not run the scripts below.
+
 ## Purpose
 
 This repository manages the Windows/WSL2 pilot around the upstream

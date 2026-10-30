@@ -16,6 +16,9 @@
 | Public relay | `wss://buzz.proeduconnect.com` |
 | Hermes bridge unit | `buzz-hermes.service` on `srv1069851.hstgr.cloud` |
 | Hermes bridge rollback | `/root/buzz-rollbacks/20260806T041832Z-pre-hermes-bridge` |
+| OpenClaw VPS | `srv1161177.hstgr.cloud` (`72.61.70.71`), operator SSH only |
+| OpenClaw Compose | `/docker/openclaw-kv6w` |
+| OpenClaw container | `openclaw-kv6w-openclaw-1` |
 
 Docker live volumes: `buzz-postgres-data`, `buzz-minio-data`, and
 `buzz-prometheus-data`.
@@ -61,3 +64,6 @@ wsl.exe -d Ubuntu-24.04 --cd /home/gifma/projects/buzz
 The public Buzz hostname reuses the approved pre-existing Windows Cloudflare
 Tunnel. No Cloudflare Access policy exists. The approved Hermes bridge is
 active; the OpenClaw bridge remains locally prepared and approval-gated.
+SSH access to either VPS is only for bounded operator staging and inspection;
+Buzz does not receive or persist an SSH key. The running bridges use outbound
+WSS to the existing public relay hostname.

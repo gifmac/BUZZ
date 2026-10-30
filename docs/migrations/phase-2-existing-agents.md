@@ -42,6 +42,7 @@ Hermes remains owned by:
 
 OpenClaw remains owned by:
 
+- Host: `srv1161177.hstgr.cloud` (`72.61.70.71`)
 - Compose project: `openclaw-kv6w`
 - Compose file: `/docker/openclaw-kv6w/docker-compose.yml`
 - Compose SHA-256:
@@ -140,6 +141,11 @@ hermes acp                             openclaw acp -> existing Gateway
 SSH is used only to stage and inspect the approved files. The persistent
 runtime path is outbound WSS from each local systemd bridge to the existing
 Cloudflare hostname.
+
+The operator already has a working local OpenClaw SSH credential in the normal
+Windows SSH store. Buzz is not given that private key, no private key enters
+this repository, and the rollout does not add or change the VPS
+`root/.ssh/authorized_keys` file.
 
 ## Exact proposed files
 
